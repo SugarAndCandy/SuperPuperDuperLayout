@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
     s.social_media_url = 'https://twitter.com/zolotarev_s'
     s.source = { :git => 'https://github.com/SugarAndCandy/SuperPuperDuperLayout.git', :tag => s.version }
     s.ios.deployment_target = '8.0'
-    s.source_files = 'Source/*.swift'
+    s.source_files = 'Source/**/*.swift'
+    s.swift_version = '4'
 end
