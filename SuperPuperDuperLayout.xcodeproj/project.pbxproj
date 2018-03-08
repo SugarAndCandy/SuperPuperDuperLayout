@@ -28,7 +28,6 @@
 		76CA4263204F283300EC089B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CA4261204F283300EC089B /* LaunchScreen.storyboard */; };
 		76CA4269204F72E000EC089B /* CenterLayoutAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA4268204F72E000EC089B /* CenterLayoutAttribute.swift */; };
 		76CA426B204F736F00EC089B /* LayoutOptionsForCenterConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA426A204F736F00EC089B /* LayoutOptionsForCenterConstraints.swift */; };
-		76F779BE20513E9C00DC98A1 /* CGSizeConvenienceInitsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F779BD20513E9C00DC98A1 /* CGSizeConvenienceInitsExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		76CA4264204F283300EC089B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76CA4268204F72E000EC089B /* CenterLayoutAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutAttribute.swift; sourceTree = "<group>"; };
 		76CA426A204F736F00EC089B /* LayoutOptionsForCenterConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutOptionsForCenterConstraints.swift; sourceTree = "<group>"; };
-		76F779BD20513E9C00DC98A1 /* CGSizeConvenienceInitsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeConvenienceInitsExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				76CA41B3204ED57A00EC089B /* Multiplier.swift */,
-				76F779BD20513E9C00DC98A1 /* CGSizeConvenienceInitsExtension.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 				76CA41B4204ED57A00EC089B /* Multiplier.swift in Sources */,
 				76CA41CB204EF6F800EC089B /* LayoutAttributeByCoordinateAxes.swift in Sources */,
 				76CA41C9204EF5F100EC089B /* LayoutAttribute.swift in Sources */,
-				76F779BE20513E9C00DC98A1 /* CGSizeConvenienceInitsExtension.swift in Sources */,
 				76CA41DA204EF86900EC089B /* LayoutOptionsForConstraintsOfEdges.swift in Sources */,
 				76CA41CF204EF74200EC089B /* SizeLayoutAttribute.swift in Sources */,
 			);

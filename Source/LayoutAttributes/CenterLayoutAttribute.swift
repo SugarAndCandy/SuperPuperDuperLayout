@@ -59,8 +59,8 @@ open class CenterViewLayoutAttribute: CenterLayoutAttribute, LayoutAttributeRela
     public typealias RelationToSuperview = LayoutOptionsForCenterConstraints
     
     open var equalToSuperview: RelationToSuperview { return relation(.equal, to: layoutDescriptionItem(from: layoutDescription)) }
-    open var lessThanOrEqualSuperview: RelationToSuperview { return relation(.lessThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
-    open var greaterThanOrEqualSuperview: RelationToSuperview { return relation(.greaterThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
+    open var lessThanOrEqualToSuperview: RelationToSuperview { return relation(.lessThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
+    open var greaterThanOrEqualToSuperview: RelationToSuperview { return relation(.greaterThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
     
     internal func relation(_ relation: NSLayoutRelation, to item: LayoutDescription.Item?) -> LayoutOptionsForCenterConstraints {
         prepareLayoutDescription(layoutDescription, with: relation, to: item)

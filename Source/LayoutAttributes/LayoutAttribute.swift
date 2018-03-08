@@ -27,14 +27,14 @@ import UIKit
 public protocol LayoutAttributeRelatedToSuperView {
     associatedtype RelationToSuperview
     var equalToSuperview: RelationToSuperview { get }
-    var lessThanOrEqualSuperview: RelationToSuperview { get }
-    var greaterThanOrEqualSuperview: RelationToSuperview { get }
+    var lessThanOrEqualToSuperview: RelationToSuperview { get }
+    var greaterThanOrEqualToSuperview: RelationToSuperview { get }
 }
 
 public extension LayoutAttributeRelatedToSuperView where Self: EditableItem, RelationToSuperview: EditableItem {
     var equalToSuperview: RelationToSuperview { return relation(.equal, to: layoutDescriptionItem(from: layoutDescription)) }
-    var lessThanOrEqualSuperview: RelationToSuperview { return relation(.lessThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
-    var greaterThanOrEqualSuperview: RelationToSuperview { return relation(.greaterThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
+    var lessThanOrEqualToSuperview: RelationToSuperview { return relation(.lessThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
+    var greaterThanOrEqualToSuperview: RelationToSuperview { return relation(.greaterThanOrEqual, to: layoutDescriptionItem(from: layoutDescription)) }
     
     internal func layoutDescriptionItem(from layoutDescription: LayoutDescription?) -> LayoutDescription.Item? {
         if let view = layoutDescription?.firstItem.someItem as? UIView {
