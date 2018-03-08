@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(someView)
         Layout.to(someView) {
-            $0.size.equal.value(.init(square: 30)
+            $0.size.equal.value(.init(width: 30, height: 30))
             $0.center.equalToSuperview.value(.zero)
         }
     }
