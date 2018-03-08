@@ -24,7 +24,8 @@
 
 import Foundation
 
-open class LayoutOptionsForCenterConstraints: LayoutOptions<UIOffset> {
+open class LayoutOptionsForCenterConstraints: LayoutOptions, LayoutOptionsEditableValueProtocol {
+    public typealias ValueType = UIOffset
     internal convenience init(centerX: LayoutDescription, centerY: LayoutDescription?) {
         self.init(layoutDescription: centerX)
         self.centerYDescription = centerY
@@ -34,7 +35,7 @@ open class LayoutOptionsForCenterConstraints: LayoutOptions<UIOffset> {
     public required init(layoutDescription: LayoutDescription) { super.init(layoutDescription: layoutDescription) }
     
     @discardableResult
-    open override func value(_ value: UIOffset) -> Self {
+    open func value(_ value: ValueType) -> Self {
         layoutDescription.constant = value.horizontal
         centerYDescription?.constant = value.vertical
         return self

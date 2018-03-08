@@ -24,7 +24,7 @@
 
 import UIKit
 
-open class LayoutOptions<Value>: EditableItem {
+open class LayoutOptions: EditableItem {
     @discardableResult
     open func priority(_ priority: UILayoutPriority) -> Self {
         layoutDescription.priority = priority
@@ -41,9 +41,9 @@ open class LayoutOptions<Value>: EditableItem {
         layoutDescription.multiplier = m
         return self
     }
-    
-    @discardableResult
-    open func value(_ value: Value) -> Self {
-        return self
-    }
+}
+
+public protocol LayoutOptionsEditableValueProtocol {
+    associatedtype ValueType
+    func value(_ value: ValueType) -> Self
 }

@@ -24,7 +24,8 @@
 
 import UIKit
 
-open class LayoutOptionsForConstraintsOfSize: LayoutOptions<CGSize> {
+open class LayoutOptionsForConstraintsOfSize: LayoutOptions, LayoutOptionsEditableValueProtocol {
+    public typealias ValueType = CGSize
     internal convenience init(width: LayoutDescription, height: LayoutDescription?) {
         self.init(layoutDescription: width)
         self.heightDescription = height
@@ -34,7 +35,7 @@ open class LayoutOptionsForConstraintsOfSize: LayoutOptions<CGSize> {
     public required init(layoutDescription: LayoutDescription) { super.init(layoutDescription: layoutDescription) }
     
     @discardableResult
-    open override func value(_ value: CGSize) -> Self {
+    open func value(_ value: ValueType) -> Self {
         layoutDescription.constant = value.width
         heightDescription?.constant = value.height
         return self

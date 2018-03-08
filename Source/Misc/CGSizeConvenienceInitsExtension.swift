@@ -1,5 +1,5 @@
 //
-// LayoutOptionsForSingleConstraint.swift
+// CGSizeConvenienceInitsExtension.swift
 //
 // Copyright (c) 2018-Present Sugar And Candy ( https://github.com/SugarAndCandy )
 //
@@ -24,13 +24,6 @@
 
 import UIKit
 
-open class LayoutOptionsForSingleConstraint: LayoutOptions, LayoutOptionsEditableValueProtocol {
-    public typealias ValueType = CGFloat
-    @discardableResult
-    open func value(_ value: ValueType) -> Self {
-        layoutDescription.constant = value
-        return self
-    }
-    
-    open var nsLayoutConstraint: NSLayoutConstraint? { return layoutDescription.nsLayoutConstraint }
+public extension CGSize {
+    public init(square: CGFloat) { self.init(width: square, height: square) }
 }

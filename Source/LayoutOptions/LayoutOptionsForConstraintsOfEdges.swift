@@ -24,7 +24,8 @@
 
 import UIKit
 
-open class LayoutOptionsForConstraintsOfEdges: LayoutOptions<UIEdgeInsets> {
+open class LayoutOptionsForConstraintsOfEdges: LayoutOptions, LayoutOptionsEditableValueProtocol {
+    public typealias ValueType = UIEdgeInsets
     internal convenience init(top: LayoutDescription, bottom: LayoutDescription?, leading: LayoutDescription?, trailing: LayoutDescription?) {
         self.init(layoutDescription: top)
         self.bottom = bottom
@@ -38,7 +39,7 @@ open class LayoutOptionsForConstraintsOfEdges: LayoutOptions<UIEdgeInsets> {
     public required init(layoutDescription: LayoutDescription) { super.init(layoutDescription: layoutDescription) }
     
     @discardableResult
-    open override func value(_ value: UIEdgeInsets) -> Self {
+    open func value(_ value: ValueType) -> Self {
         layoutDescription.constant = value.top
         bottom?.constant = value.bottom
         leading?.constant = value.left

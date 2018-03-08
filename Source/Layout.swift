@@ -25,14 +25,14 @@
 import UIKit
 
 public final class Layout {
-    open class func to(view: UIView, layout: ((ConstraintViewFactory) -> ())) {
+    open class func to(_ view: UIView, _ layout: ((ConstraintViewFactory) -> ())) {
         let factory = ConstraintViewFactory(firstItem: LayoutDescription.Item(view: view))
         layout(factory)
         factory.setup()
     }
     
     @available(iOS 9.0, *)
-    open class func to(layoutGuide: UILayoutGuide, layout: ((ConstraintLayoutGuideFactory) -> ())) {
+    open class func to(_ layoutGuide: UILayoutGuide, _ layout: ((ConstraintLayoutGuideFactory) -> ())) {
         let factory = ConstraintLayoutGuideFactory(firstItem: LayoutDescription.Item(layoutGuide: layoutGuide))
         layout(factory)
         factory.setup()

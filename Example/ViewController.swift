@@ -25,10 +25,6 @@
 import UIKit
 import SuperPuperDuperLayout
 
-extension CGSize {
-    init(square: CGFloat) { self.init(width: square, height: square) }
-}
-
 class ViewController: UIViewController {
     
     //MARK: - Appearance
@@ -66,9 +62,9 @@ class ViewController: UIViewController {
     //MARK: - Layout
     
     private func layout() {
-        Layout.to(view: avatarView) {
+        Layout.to(avatarView) {
             $0.size.equal.value(appearance.avatarSize)
-            $0.center.equalToSuperview.value(.init(horizontal: 0, vertical: 0))
+            $0.center.equalToSuperview.value(.zero)
         }
     }
 }
