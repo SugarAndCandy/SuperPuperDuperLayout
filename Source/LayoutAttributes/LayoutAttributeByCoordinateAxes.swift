@@ -32,6 +32,6 @@ open class VerticalViewLayoutAttribute: VerticalLayoutAttribute, LayoutAttribute
 
 open class HorizontalLayoutAttribute: LayoutAttribute<HorizontalRelatedElement, HorizontalRelatedElement> {}
 
-open class HorizontalViewLayoutAttribute: VerticalLayoutAttribute, LayoutAttributeRelatedToSuperView {
+open class HorizontalViewLayoutAttribute: HorizontalLayoutAttribute, LayoutAttributeRelatedToSuperView {
     public typealias RelationToSuperview = HorizontalRelatedElement
 }
