@@ -59,19 +59,25 @@ open class LayoutDescription {
     open var constant = CGFloat(0)
     
     open var nsLayoutConstraint: NSLayoutConstraint? {
+        guard _nsLayoutConstraint == nil else { return _nsLayoutConstraint }
         guard let firstItem = firstItem.someItem else { return nil }
         guard firstAttribute != .notAnAttribute else { return nil }
         guard let relation = relation else { return nil }
         guard secondItem == nil || secondAttribute != .notAnAttribute else { return nil }
         if secondItem == nil { secondAttribute = firstAttribute }
-        return NSLayoutConstraint(item: firstItem,
-                                  attribute: firstAttribute,
-                                  relatedBy: relation,
-                                  toItem: secondItem?.someItem,
-                                  attribute: secondAttribute,
-                                  multiplier: CGFloat(multiplier),
-                                  constant: constant)
+        _nsLayoutConstraint = NSLayoutConstraint(item: firstItem,
+                                                      attribute: firstAttribute,
+                                                      relatedBy: relation,
+                                                      toItem: secondItem?.someItem,
+                                                      attribute: secondAttribute,
+                                                      multiplier: CGFloat(multiplier),
+                                                      constant: constant)
+        _nsLayoutConstraint?.shouldBeArchived = true
+        return _nsLayoutConstraint
     }
+    
+    /// Cached 'open var nsLayoutConstraint: NSLayoutConstraint?'
+    private weak var _nsLayoutConstraint: NSLayoutConstraint?
 }
 
 open class EditableItem {

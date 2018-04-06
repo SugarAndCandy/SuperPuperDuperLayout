@@ -63,7 +63,7 @@ open class ConstraintFactory {
     
     internal func setup() {
         (firstItem.someItem as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(layoutDescriptions.flatMap { $0.nsLayoutConstraint })
+        NSLayoutConstraint.activate(layoutDescriptions.compactMap { $0.nsLayoutConstraint })
     }
     
     fileprivate func layoutDescription(for attribute: NSLayoutAttribute) -> LayoutDescription {
@@ -120,7 +120,6 @@ open class ConstraintLayoutGuideFactory: ConstraintFactory, VerticalAxisLayoutTr
         let bottomLayoutDescription = layoutDescription(for: .bottom)
         let leadingLayoutDescription = layoutDescription(for: .leading)
         let trailingLayoutDescription = layoutDescription(for: .trailing)
-        layoutDescriptions.append(contentsOf: [topLayoutDescription, bottomLayoutDescription, leadingLayoutDescription, trailingLayoutDescription])
         return EdgesLayoutAttributeType(top: topLayoutDescription,
                                         bottom: bottomLayoutDescription,
                                         leading: leadingLayoutDescription,
@@ -130,7 +129,6 @@ open class ConstraintLayoutGuideFactory: ConstraintFactory, VerticalAxisLayoutTr
     open var size: SizeLayoutAttributeType {
         let widthLayoutDescription = layoutDescription(for: .width)
         let heightLayoutDescription = layoutDescription(for: .height)
-        layoutDescriptions.append(contentsOf: [widthLayoutDescription, heightLayoutDescription])
         return SizeLayoutAttributeType(width: widthLayoutDescription, height: heightLayoutDescription)
     }
     

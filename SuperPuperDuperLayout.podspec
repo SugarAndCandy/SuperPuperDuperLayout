@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'SuperPuperDuperLayout'
-    s.version = '1.0.2'
+    s.version = '1.1.0'
     s.license = 'MIT'
     s.summary = 'Lightweight, elegant and safe wrapper over auto layout.'
     s.description = 'Lightweight, elegant and safe wrapper over auto layout. Inspired by Layout Anchors ( https://developer.apple.com/documentation/uikit/nslayoutanchor ) and SnapKit ( https://github.com/SnapKit/SnapKit ). Without overheads such as «extension UIView», «extension UILayoutGuide», «objc_setAssociatedObjectAssociatedObject», «objc_getAssociatedObject» etc.'
@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/SugarAndCandy/SuperPuperDuperLayout.git', :tag => s.version }
     s.ios.deployment_target = '8.0'
     s.source_files = 'Source/**/*.swift'
-    s.swift_version = '4'
+    s.swift_version = '4.1'
 end

@@ -63,7 +63,10 @@ public protocol ExtendedLayoutTraits {
     associatedtype EdgesLayoutAttributeType
     associatedtype SizeLayoutAttributeType
     associatedtype CenterLayoutAttributeType
+    /// Creates constraint for all edges: top, bottom, leading, trailing
     var edges: EdgesLayoutAttributeType { get }
+    /// Creates constraint for all size values: width, height
     var size: SizeLayoutAttributeType { get }
+    /// Creates constraint for all center values: centerX, centerY
     var center: CenterLayoutAttributeType { get }
 }

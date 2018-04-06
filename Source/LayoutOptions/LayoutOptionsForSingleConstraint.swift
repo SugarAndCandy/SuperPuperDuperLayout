@@ -26,6 +26,7 @@ import UIKit
 
 open class LayoutOptionsForSingleConstraint: LayoutOptions, LayoutOptionsEditableValueProtocol {
     public typealias ValueType = CGFloat
+    
     @discardableResult
     open func value(_ value: ValueType) -> Self {
         layoutDescription.constant = value
