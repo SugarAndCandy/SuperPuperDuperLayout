@@ -66,12 +66,12 @@ open class LayoutDescription {
         guard secondItem == nil || secondAttribute != .notAnAttribute else { return nil }
         if secondItem == nil { secondAttribute = firstAttribute }
         _nsLayoutConstraint = NSLayoutConstraint(item: firstItem,
-                                                      attribute: firstAttribute,
-                                                      relatedBy: relation,
-                                                      toItem: secondItem?.someItem,
-                                                      attribute: secondAttribute,
-                                                      multiplier: CGFloat(multiplier),
-                                                      constant: constant)
+                                                 attribute: firstAttribute,
+                                                 relatedBy: relation,
+                                                 toItem: secondItem?.someItem,
+                                                 attribute: secondAttribute,
+                                                 multiplier: CGFloat(multiplier),
+                                                 constant: constant)
         _nsLayoutConstraint?.shouldBeArchived = true
         return _nsLayoutConstraint
     }
